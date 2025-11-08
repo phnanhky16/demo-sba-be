@@ -7,4 +7,7 @@ import java.util.List;
 
 @Repository
 public interface FlowersRepository extends JpaRepository<Flowers, Integer> {
+    List<Flowers> findByCommonNameContainingIgnoreCaseAndWateringNeeds(String commonName, String wateringNeeds);
+    List<Flowers> findByCommonNameContainingIgnoreCase(String commonName);
+    List<Flowers> findByWateringNeeds(String wateringNeeds);
 }
